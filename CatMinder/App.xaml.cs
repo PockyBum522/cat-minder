@@ -17,7 +17,7 @@ public partial class App : Application
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        Window window = base.CreateWindow(activationState);
+        var window = base.CreateWindow(activationState);
         
         window.Created += (s, e) =>
         {
