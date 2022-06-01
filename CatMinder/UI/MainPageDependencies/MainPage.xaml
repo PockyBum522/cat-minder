@@ -11,12 +11,12 @@
     Jake: morning drops, evening drops
     Feed: morning, afternoon, and night -->
 
-    <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center" >
+    <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center" HorizontalOptions="Center" >
 
         <!-- Lulu Location -->
         <Label Text="Lulu" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
-        <HorizontalStackLayout  Margin="0,-20,0,0">
+        <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
 
             <controls:CustomCheckBox Text="Garage" IsChecked="{Binding IsCheckedLuluGarage}" />
             <controls:CustomCheckBox Text="Inside" IsChecked="{Binding IsCheckedLuluInside}" />
@@ -27,7 +27,7 @@
         <!-- Jake Location -->
         <Label Text="Jake" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
-        <HorizontalStackLayout Margin="0,-20,0,0">
+        <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
 
             <controls:CustomCheckBox Text="Garage" IsChecked="{Binding IsCheckedJakeGarage}" />
             <controls:CustomCheckBox Text="Inside" IsChecked="{Binding IsCheckedJakeInside}" />
@@ -37,7 +37,7 @@
         <!-- Jake Drops -->
         <Label Text="Jake Drops" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
-        <HorizontalStackLayout Margin="0,-20,0,0">
+        <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
 
             <controls:CustomCheckBox Text="Morning" IsChecked="{Binding IsCheckedJakeMorning}" />
             <controls:CustomCheckBox Text="Night" IsChecked="{Binding IsCheckedJakeNight}" />
@@ -48,7 +48,7 @@
         <!-- Food -->
         <Label Text="Food" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
-        <HorizontalStackLayout Margin="0,-20,0,0">
+        <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center">
 
             <controls:CustomCheckBox Text="Morning" IsChecked="{Binding IsCheckedFoodMorning}" />
             <controls:CustomCheckBox Text="Afternoon" IsChecked="{Binding IsCheckedFoodNoon}" />
