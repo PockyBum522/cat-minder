@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Name="this"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CatMinder.UI.CustomControls.CustomCheckBox">
+
+    <StackLayout BindingContext="{x:Reference this}">
+        
+        <!-- CheckBox -->
+        <Border StrokeThickness="1" 
+                        Stroke="Gray" 
+                        Background="#202020" 
+                        Padding="10,10" 
+                        HorizontalOptions="Center"
+                        Margin="-15,0,10,0" >
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5" />
+            </Border.StrokeShape>
+
+            <HorizontalStackLayout>
+
+                <CheckBox IsChecked="{Binding IsChecked, FallbackValue='true', Mode=TwoWay} "/>
+
+                <Label Text="{Binding Text, FallbackValue='No Val'}" 
+                           TextColor="#EEEEEE"
+                           Margin="-10,0,10,0" 
+                           VerticalTextAlignment="Center"/>
+
+            </HorizontalStackLayout>
+        </Border>
+    </StackLayout>
+</ContentView>
