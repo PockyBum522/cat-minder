@@ -16,7 +16,7 @@
 		<ApplicationTitle>CatMinder</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.catminder</ApplicationId>
+		<ApplicationId>jds.dsikes.catminder</ApplicationId>
 		<ApplicationIdGuid>853E24F8-C086-470F-AED4-D89DAF75BC17</ApplicationIdGuid>
 
 		<!-- Versions -->
