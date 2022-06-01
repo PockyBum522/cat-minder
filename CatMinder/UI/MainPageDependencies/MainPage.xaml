@@ -17,7 +17,7 @@
         <!-- Lulu Location -->
         <Label Text="Lulu" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
-        <HorizontalStackLayout Margin="0,-20,0,0" >
+        <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center">
 
             <controls:CustomCheckBox Text="Garage" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedLuluGarage, Mode=TwoWay}" />
             <controls:CustomCheckBox Text="Inside" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedLuluInside, Mode=TwoWay}" />
@@ -41,7 +41,7 @@
                 Background="#101010" 
                 Padding="5,5" 
                 HorizontalOptions="Center"
-                Margin="0,0,0,0" 
+                Margin="0,50,0,0" 
                 WidthRequest="380">
 
                 <Border.StrokeShape>
