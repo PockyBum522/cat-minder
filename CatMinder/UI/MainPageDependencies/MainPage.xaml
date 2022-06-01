@@ -35,29 +35,45 @@
 
         </HorizontalStackLayout>
         
-        <!-- Jake Drops -->
-        <Label Text="Jake Drops" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
+        <!-- CheckBox -->
+        <Border StrokeThickness="1" 
+                Stroke="Gray" 
+                Background="#101010" 
+                Padding="5,5" 
+                HorizontalOptions="Center"
+                Margin="0,0,0,0" 
+                WidthRequest="380">
 
-        <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5" />
+                </Border.StrokeShape>
 
-            <controls:CustomCheckBox Text="Morning" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedJakeMorning, Mode=TwoWay}" />
-            <controls:CustomCheckBox Text="Night" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedJakeNight, Mode=TwoWay}" />
+                <!-- Jake Drops -->
+                <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center" HorizontalOptions="Center" >
+                    <Label Text="Jake Drops" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
-        </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
 
-        <!-- Food -->
-        <Label Text="Food" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
+                        <controls:CustomCheckBox Text="Morning" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedJakeMorning, Mode=TwoWay}" />
+                        <controls:CustomCheckBox Text="Night" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedJakeNight, Mode=TwoWay}" />
 
-        <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center">
+                    </HorizontalStackLayout>
 
-           <controls:CustomCheckBox Text="Morning" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedFoodMorning, Mode=TwoWay}" />
-           <controls:CustomCheckBox Text="Noon" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedFoodNoon, Mode=TwoWay}" />
-            <controls:CustomCheckBox Text="Night" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedFoodNight, Mode=TwoWay}" />
+                    <!-- Food -->
+                    <Label Text="Food" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
-        </HorizontalStackLayout>
+                    <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center">
 
-        <Button Text="Clear Drops and Food" Clicked="ClearButton_Clicked" />
+                        <controls:CustomCheckBox Text="Morning" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedFoodMorning, Mode=TwoWay}" />
+                        <controls:CustomCheckBox Text="Noon" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedFoodNoon, Mode=TwoWay}" />
+                        <controls:CustomCheckBox Text="Night" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedFoodNight, Mode=TwoWay}" />
 
+                    </HorizontalStackLayout>
+
+                    <Button Text="Clear Drops and Food" Clicked="ClearButton_Clicked" Margin="0,0,0,10"/>
+
+                </VerticalStackLayout>
+        </Border>
     </VerticalStackLayout>
 
 </ContentPage>
