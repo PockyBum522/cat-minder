@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:CatMinder.UI.CustomControls"
+             xmlns:mainPageDependencies="clr-namespace:CatMinder.UI.MainPageDependencies"
              x:Class="CatMinder.UI.MainPageDependencies.MainPage"
              Title="Cat Minder"
-             BackgroundColor="Black" >
+             BackgroundColor="Black" 
+             x:DataType="mainPageDependencies:MainPageViewModel">
 			 
     <!-- Lulu: in garage, outside, inside
     Jake: in garage, inside
@@ -18,13 +20,13 @@
 
         <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
 
-            <controls:CustomCheckBox Text="Garage" IsChecked="{Binding IsCheckedLuluGarage}" />
-            <controls:CustomCheckBox Text="Inside" IsChecked="{Binding IsCheckedLuluInside}" />
+            <controls:CustomCheckBox Text="Garage" IsChecked="{Binding IsCheckedLuluGarage, Source=MPViewModel, Mode=TwoWay}" />
+            <!--<controls:CustomCheckBox Text="Inside" IsChecked="{Binding IsCheckedLuluInside}" />
             <controls:CustomCheckBox Text="Outside" IsChecked="{Binding IsCheckedLuluOutside}" />
 
         </HorizontalStackLayout>
 
-        <!-- Jake Location -->
+        --><!-- Jake Location --><!--
         <Label Text="Jake" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
         <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
@@ -34,7 +36,7 @@
 
         </HorizontalStackLayout>
 
-        <!-- Jake Drops -->
+        --><!-- Jake Drops --><!--
         <Label Text="Jake Drops" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
         <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
@@ -45,14 +47,14 @@
         </HorizontalStackLayout>
 
 
-        <!-- Food -->
+        --><!-- Food --><!--
         <Label Text="Food" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
         <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center">
 
             <controls:CustomCheckBox Text="Morning" IsChecked="{Binding IsCheckedFoodMorning}" />
             <controls:CustomCheckBox Text="Afternoon" IsChecked="{Binding IsCheckedFoodNoon}" />
-            <controls:CustomCheckBox Text="Night" IsChecked="{Binding IsCheckedFoodNight}" />
+            <controls:CustomCheckBox Text="Night" IsChecked="{Binding IsCheckedFoodNight}" />-->
 
         </HorizontalStackLayout>
 

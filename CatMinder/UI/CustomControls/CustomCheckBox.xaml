@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView x:Name="this"
+<ContentView x:Name="MyCustomCheckBox"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CatMinder.UI.CustomControls.CustomCheckBox" >
+             xmlns:customControls="clr-namespace:CatMinder.UI.CustomControls"
+             x:Class="CatMinder.UI.CustomControls.CustomCheckBox" x:DataType="customControls:CustomCheckBox">
 
-    <StackLayout BindingContext="{x:Reference this}" Margin="10,0,0,0" >
+    <StackLayout Margin="10,0,0,0" >
         
         <!-- CheckBox -->
         <Border StrokeThickness="1" 
@@ -20,12 +21,13 @@
 
             <HorizontalStackLayout>
 
-                <CheckBox IsChecked="{Binding IsChecked, FallbackValue='true', Mode=TwoWay} "/>
+                <CheckBox IsChecked="{Binding IsChecked, FallbackValue='true', Mode=TwoWay}"/>
 
                 <Label Text="{Binding Text, FallbackValue='No Val'}" 
                            TextColor="#EEEEEE"
-                           Margin="-10,0,10,0" 
+                           Margin="-10,0,10,0"  
                            VerticalTextAlignment="Center"/>
+
 
             </HorizontalStackLayout>
         </Border>

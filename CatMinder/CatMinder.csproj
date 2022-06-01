@@ -54,4 +54,8 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Core\Logic\" />
+	</ItemGroup>
+
 </Project>
