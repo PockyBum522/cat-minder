@@ -2,20 +2,24 @@
 
 public partial class MainPage : ContentPage
 {
-    public MainPageViewModel MPViewModel { get; set; }
+    public MainPageViewModel MainPageViewModel { get; set; }
 
-    public MainPage()
-	{
-        MPViewModel = new MainPageViewModel();
-        
+    public MainPage(MainPageViewModel mainPageViewModel)
+    {
+        MainPageViewModel = mainPageViewModel;
+        BindingContext = MainPageViewModel;
+
         InitializeComponent();
-
-        BindingContext = MPViewModel;
     }
 
     public void ClearButton_Clicked(object sender, EventArgs e)
     {
-        MPViewModel.IsCheckedLuluGarage = !(MPViewModel.IsCheckedLuluGarage);
+        MainPageViewModel.IsCheckedJakeMorning = false;
+        MainPageViewModel.IsCheckedJakeNight = false;
+        
+        MainPageViewModel.IsCheckedFoodMorning = false;
+        MainPageViewModel.IsCheckedFoodNoon = false;
+        MainPageViewModel.IsCheckedFoodNight = false;
     }
 }
 

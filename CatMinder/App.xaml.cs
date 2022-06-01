@@ -1,11 +1,34 @@
-﻿namespace CatMinder;
+﻿using CatMinder.Core.Logic;
+using CatMinder.UI.MainPageDependencies;
+
+namespace CatMinder;
 
 public partial class App : Application
 {
-	public App()
+    private readonly MainPageViewModelStateSaver _mainPageViewModelStateSaver;
+
+    public App(MainPageViewModelStateSaver mainPageViewModelStateSaver)
 	{
-		InitializeComponent();
+        _mainPageViewModelStateSaver = mainPageViewModelStateSaver;
+        InitializeComponent();
 
 		MainPage = new AppShell();
 	}
+
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        Window window = base.CreateWindow(activationState);
+        
+        window.Created += (s, e) =>
+        {
+            _mainPageViewModelStateSaver.LoadMainViewModelState();
+        };
+
+        window.Deactivated += (s, e) =>
+        {
+            _mainPageViewModelStateSaver.SaveMainViewModelState();
+        };
+
+        return window;
+    }
 }

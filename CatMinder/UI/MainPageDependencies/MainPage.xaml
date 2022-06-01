@@ -2,11 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:CatMinder.UI.CustomControls"
-             xmlns:mainPageDependencies="clr-namespace:CatMinder.UI.MainPageDependencies"
              x:Class="CatMinder.UI.MainPageDependencies.MainPage"
              Title="Cat Minder"
              BackgroundColor="Black" 
-             x:DataType="mainPageDependencies:MainPageViewModel">
+             BindingContext="{Binding Source={RelativeSource Self}, Path=MainPageViewModel}">
 			 
     <!-- Lulu: in garage, outside, inside
     Jake: in garage, inside
@@ -18,48 +17,46 @@
         <!-- Lulu Location -->
         <Label Text="Lulu" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
-        <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
+        <HorizontalStackLayout Margin="0,-20,0,0" >
 
-            <controls:CustomCheckBox Text="Garage" IsChecked="{Binding IsCheckedLuluGarage, Source=MPViewModel, Mode=TwoWay}" />
-            <!--<controls:CustomCheckBox Text="Inside" IsChecked="{Binding IsCheckedLuluInside}" />
-            <controls:CustomCheckBox Text="Outside" IsChecked="{Binding IsCheckedLuluOutside}" />
-
+            <controls:CustomCheckBox Text="Garage" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedLuluGarage, Mode=TwoWay}" />
+            <controls:CustomCheckBox Text="Inside" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedLuluInside, Mode=TwoWay}" />
+            <controls:CustomCheckBox Text="Outside" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedLuluOutside, Mode=TwoWay}" />
+            
         </HorizontalStackLayout>
 
-        --><!-- Jake Location --><!--
+        <!-- Jake Location -->
         <Label Text="Jake" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
         <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
 
-            <controls:CustomCheckBox Text="Garage" IsChecked="{Binding IsCheckedJakeGarage}" />
-            <controls:CustomCheckBox Text="Inside" IsChecked="{Binding IsCheckedJakeInside}" />
+            <controls:CustomCheckBox Text="Garage" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedJakeGarage, Mode=TwoWay}" />
+            <controls:CustomCheckBox Text="Inside" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedJakeInside, Mode=TwoWay}" />
 
         </HorizontalStackLayout>
-
-        --><!-- Jake Drops --><!--
+        
+        <!-- Jake Drops -->
         <Label Text="Jake Drops" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
         <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center" >
 
-            <controls:CustomCheckBox Text="Morning" IsChecked="{Binding IsCheckedJakeMorning}" />
-            <controls:CustomCheckBox Text="Night" IsChecked="{Binding IsCheckedJakeNight}" />
+            <controls:CustomCheckBox Text="Morning" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedJakeMorning, Mode=TwoWay}" />
+            <controls:CustomCheckBox Text="Night" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedJakeNight, Mode=TwoWay}" />
 
         </HorizontalStackLayout>
 
-
-        --><!-- Food --><!--
+        <!-- Food -->
         <Label Text="Food" FontSize="32" HorizontalOptions="Center" TextColor="LightGray" />
 
         <HorizontalStackLayout Margin="0,-20,0,0" HorizontalOptions="Center">
 
-            <controls:CustomCheckBox Text="Morning" IsChecked="{Binding IsCheckedFoodMorning}" />
-            <controls:CustomCheckBox Text="Afternoon" IsChecked="{Binding IsCheckedFoodNoon}" />
-            <controls:CustomCheckBox Text="Night" IsChecked="{Binding IsCheckedFoodNight}" />-->
+           <controls:CustomCheckBox Text="Morning" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedFoodMorning, Mode=TwoWay}" />
+           <controls:CustomCheckBox Text="Noon" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedFoodNoon, Mode=TwoWay}" />
+            <controls:CustomCheckBox Text="Night" CustomChecked="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=MainPageViewModel.IsCheckedFoodNight, Mode=TwoWay}" />
 
         </HorizontalStackLayout>
 
-        <Button Text="Clear Drops and Food"
-                Clicked="ClearButton_Clicked" />
+        <Button Text="Clear Drops and Food" Clicked="ClearButton_Clicked" />
 
     </VerticalStackLayout>
 
