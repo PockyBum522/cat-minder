@@ -56,6 +56,8 @@ namespace CatMinder.Core.Logic
             _viewModel.IsCheckedFoodMorning = Preferences.Default.Get(nameof(_viewModel.IsCheckedFoodMorning), false);
             _viewModel.IsCheckedFoodNoon = Preferences.Default.Get(nameof(_viewModel.IsCheckedFoodNoon), false);
             _viewModel.IsCheckedFoodNight = Preferences.Default.Get(nameof(_viewModel.IsCheckedFoodNight), false);
+
+            _viewModel.IsFinishedLoading = true;
         }
     }
 }

@@ -11,6 +11,8 @@ namespace CatMinder.UI.MainPageDependencies;
 
 public class MainPageViewModel : INotifyPropertyChanged
 {
+    public bool IsFinishedLoading { get; set; } = false;
+
     // Lulu location
     public bool IsCheckedLuluGarage { get => _isCheckedLuluGarage; set => SetField(ref _isCheckedLuluGarage, value); }
     public bool IsCheckedLuluInside { get => _isCheckedLuluInside; set => SetField(ref _isCheckedLuluInside, value); }
@@ -54,6 +56,51 @@ public class MainPageViewModel : INotifyPropertyChanged
     {
         field = value;
         OnPropertyChanged(propertyName);
+
+        var valueAsBool = (value as bool?) ?? false;
+        FixAnyConflictingCheckBoxes(propertyName ?? "", valueAsBool);
+
         return true;
+    }
+
+    private void FixAnyConflictingCheckBoxes(string propertyName, bool newValue)
+    {
+        if (!IsFinishedLoading) return;
+        
+        // If someone's un-checking things, don't do anything:
+        if (!newValue) return;
+        
+        // Set this so we can use the properties without it trying to do, well, this:
+        IsFinishedLoading = false;
+
+        switch (propertyName)
+        {
+            // Lulu Location Fixes
+            case nameof(IsCheckedLuluGarage):
+                IsCheckedLuluInside = false;
+                IsCheckedLuluOutside = false;
+                break;
+
+            case nameof(IsCheckedLuluInside):
+                IsCheckedLuluGarage = false;
+                IsCheckedLuluOutside = false;
+                break;
+            
+            case nameof(IsCheckedLuluOutside):
+                IsCheckedLuluGarage = false;
+                IsCheckedLuluInside = false;
+                break;
+
+            // Jake Location
+            case nameof(IsCheckedJakeGarage):
+                IsCheckedJakeInside = false;
+                break;
+
+            case nameof(IsCheckedJakeInside):
+                IsCheckedJakeGarage = false;
+                break;
+        }
+
+        IsFinishedLoading = true;
     }
 }
