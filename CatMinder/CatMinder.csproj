@@ -20,7 +20,8 @@
 		<ApplicationIdGuid>853E24F8-C086-470F-AED4-D89DAF75BC17</ApplicationIdGuid>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.01</ApplicationDisplayVersion>
+		<!-- This is waiting on a fix in MAUI. Uncomment only when publishing/deploying and not when just building -->
+		<!--<ApplicationDisplayVersion>1.01</ApplicationDisplayVersion>-->
 		<ApplicationVersion>2</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
